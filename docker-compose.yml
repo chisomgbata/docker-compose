@@ -1,5 +1,8 @@
 version: '3.3'
 services:
-    logto-io:
-        container_name: logto
-        image: 'svhd/logto:edge'
+  logto-io:
+    container_name: logto
+    image: 'svhd/logto:edge'
+    ports:
+      - 3001:3001
+      - 3002:3002
