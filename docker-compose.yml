@@ -3,12 +3,7 @@ services:
   logto-io:
     container_name: logto
     image: 'svhd/logto:edge'
-    entrypoint:
-      [
-        "sh",
-        "-c",
-        "npm run cli db seed -- --swe && npm start"
-      ]
+    entrypoint: [ "sh", "-c", "npm start" ]
     ports:
       - 3001:3001
       - 3002:3002
