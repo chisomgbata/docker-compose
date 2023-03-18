@@ -7,5 +7,5 @@ services:
     environment:
       - TRUST_PROXY_HEADER=1
       - 'ENDPOINT=https://logto.sukkart.com'
-      - 'DB_URL=postgres://username:password@your_postgres_url:port/db_name'
+      - 'DB_URL=postgresql://clfe0xn9r067ja4o15zlq2aia:CXs1Tbv094thKifKTxYwnKw8@clfe0xn9t005ro1a469pb9u4j:5432/clfe0xn9r067la4o1hmtzgi73'
     image: 'ghcr.io/logto-io/logto:prerelease'
