@@ -1,16 +1,11 @@
-version: '3'
-
+version: '3.3'
 services:
-  supertokens:
-    image: registry.supertokens.io/supertokens/supertokens-postgresql:4.4
+  logto-io:
+    container_name: logto
     ports:
-      - 3567:3567
+      - '3001:3001'
     environment:
-      POSTGRESQL_CONNECTION_URI: "postgresql://clfdqn5mx05jca4o140ibe1aw:bJFsqYpzI5ufS6hAQnBSPJ5m@clfdqn5mz004so1a4s4zrd2e6:5432/clfdqn5mx05jea4o1f23pc7c6"
-    restart: unless-stopped
-    healthcheck:
-      test: >
-        bash -c 'exec 3<>/dev/tcp/127.0.0.1/3567 && echo -e "GET /hello HTTP/1.1\r\nhost: 127.0.0.1:3567\r\nConnection: close\r\n\r\n" >&3 && cat <&3 | grep "Hello"'
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      - TRUST_PROXY_HEADER=1
+      - 'ENDPOINT=https://logto.sukkart.com'
+      - 'DB_URL=postgres://username:password@your_postgres_url:port/db_name'
+    image: 'ghcr.io/logto-io/logto:prerelease'
