@@ -2,4 +2,4 @@ version: '3.3'
 services:
     logto-io:
         container_name: logto
-        image: 'svhd/logto:latest'
+        image: 'svhd/logto:edge'
